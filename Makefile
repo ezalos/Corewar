@@ -13,8 +13,10 @@ LIBFT_DIR=./libft
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 
-INCLUDE_PATH=-I $(HEADER_FOLDER) -I $(LIBFT_DIR)/includes
+INCLUDE_PATH=-I$(HEADER_FOLDER) -I$(LIBFT_DIR)/includes
 COMPILER=$(CC) $(CFLAGS) $(INCLUDE_PATH)
+
+LIBS =  $(LIBFT_DIR)/libft.a $(NAME_LIB)
 
 #########################################################################################
 ################################### FICHIERS SOURCES ####################################
@@ -126,7 +128,7 @@ $(OBJ_FOLDER)/%.o: $(SRCS_LIB_FOLDER)/%.c Makefile $(RELINK_INCUDE)
 
 ## ASM
 $(NAME_ASM): $(OUT_ASM) $(NAME_LIB) Makefile $(RELINK_INCUDE)
-	$(COMPILER) -o $(NAME_ASM) $(LIBFT_DIR)/libft.a $(NAME_LIB) $(OUT_ASM)
+	$(COMPILER) -o $(NAME_ASM) $(OUT_ASM) $(LIBS)
 
 $(OBJ_FOLDER)/%.o: $(SRCS_ASM_FOLDER)/%.c Makefile $(RELINK_INCUDE)
 	$(COMPILER) -o $@ -c $<
@@ -140,7 +142,7 @@ else
 endif
 
 $(NAME_COREWAR): $(OUT_COREWAR) $(NAME_LIB) Makefile $(RELINK_INCUDE)
-	$(COMPILER) -o $(NAME_COREWAR) $(LIBS) $(LIBFT_DIR)/libft.a $(NAME_LIB) $(OUT_COREWAR)
+	$(COMPILER) -o $(NAME_COREWAR) $(OUT_COREWAR) $(LIBS)
 
 $(OBJ_FOLDER)/%.o: $(SRCS_COREWAR_FOLDER)/%.c Makefile $(RELINK_INCUDE)
 	$(COMPILER) -o $@ -c $<

@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 17:26:41 by ldevelle          #+#    #+#             */
-/*   Updated: 2019/10/28 17:16:05 by ldevelle         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:08:29 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 int					read_magic_nb(char *magic_numb)
 {
-	uint32_t		magic_num;
 	int				ret;
 
 	ret = FAILURE;
-	magic_num = COREWAR_EXEC_MAGIC;
 	if (COREWAR_EXEC_MAGIC == conv_2_uint32(magic_numb, 1))
 		ret = SUCCESS;
 	return (ret);

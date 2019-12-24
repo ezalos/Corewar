@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aa_03_st.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtaja <gtaja@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lpoinsot <lpoinsot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 15:04:06 by lpoinsot          #+#    #+#             */
-/*   Updated: 2019/11/04 00:35:26 by gtaja            ###   ########.fr       */
+/*   Updated: 2019/12/24 15:07:03 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			st(t_vm *vm, t_process *process, t_args *args)
 		write_possess(vm, args->idx[1], process->owner->number, REG_SIZE);
 		write_vm(vm, args->idx[1], &args->dir[0], REG_SIZE);
 	}
-	else if (args->idx[1] >= 0 && args->idx[1] < REG_NUMBER)
+	else if (/*args->idx[1] >= 0 &&*/ args->idx[1] < REG_NUMBER)
 		write_registre(process, args->idx[1], args->dir[0]);
 	else
 		return (FAILURE);

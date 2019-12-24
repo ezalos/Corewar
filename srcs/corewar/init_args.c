@@ -6,7 +6,7 @@
 /*   By: gtaja <gtaja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:45:25 by gtaja             #+#    #+#             */
-/*   Updated: 2019/11/03 18:42:28 by ldevelle         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:07:22 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,6 @@ static int		finish_assignment(t_options *options, int i, int j)
 
 int				init_arg_management(t_options *options, int ac, char **av)
 {
-	int			i;
-
-	i = 0;
 	ft_memset(options->available, 1, sizeof(int) * MAX_PLAYERS);
 	options->dump_cycles = -1;
 	options->visu_break = -1;

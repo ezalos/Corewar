@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 19:55:09 by ldevelle          #+#    #+#             */
-/*   Updated: 2019/11/04 01:12:20 by ldevelle         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:08:14 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		print_move_pc(t_vm *vm, t_process *process)
 {
 	int		len_func;
-	int		pos_next;
+	// int		pos_next;
 	int		i;
 
 	if (vm->options.verbose == 0)
@@ -23,7 +23,7 @@ void		print_move_pc(t_vm *vm, t_process *process)
 	process->ocp = vm->mem[(process->pc + 1) % MEM_SIZE];
 	len_func = get_arg_position(vm, process,
 		g_op_tab[process->next_func - 1].nb_args + 1);
-	pos_next = pc_access(process->pc, len_func, NOT_PC_RESTRICT);
+	// pos_next = pc_access(process->pc, len_func, NOT_PC_RESTRICT);
 	ft_printf("ADV %d (0x%04x -> 0x%04x) ", len_func,
 		process->pc, process->pc + len_func);
 	i = -1;
@@ -83,10 +83,8 @@ t_process	*ret_proc(t_vm *vm, t_process *process)
 int			process_cycle(t_vm *vm)
 {
 	t_process	*process;
-	int			i;
 	int			ret;
 
-	i = 0;
 	vm->current_p = vm->tt_pc;
 	process = vm->process_start;
 	while (process)

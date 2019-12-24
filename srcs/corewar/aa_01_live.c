@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aa_01_live.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtaja <gtaja@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lpoinsot <lpoinsot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 15:03:53 by lpoinsot          #+#    #+#             */
-/*   Updated: 2019/11/03 18:23:11 by gtaja            ###   ########.fr       */
+/*   Updated: 2019/12/24 15:06:32 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			live(t_vm *vm, t_process *process, t_args *args)
 	nb_champ = (UINT_MAX - args->raw[0]);
 	if (vm->options.verbose)
 		ft_printf("P %4d | live %d\n", process->num, args->raw[0]);
-	if (nb_champ >= 0 && nb_champ < MAX_PLAYERS
+	if (/*nb_champ >= 0 && */nb_champ < MAX_PLAYERS
 		&& vm->champions[nb_champ].exist)
 	{
 		vm->champions[nb_champ].lives_since_check++;

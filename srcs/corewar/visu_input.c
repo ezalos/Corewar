@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 22:08:15 by ldevelle          #+#    #+#             */
-/*   Updated: 2019/11/02 16:20:56 by ldevelle         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:09:30 by ezalos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,8 @@ void		user_interact(t_vm *vm)
 
 void		control_speed(t_vm *vm)
 {
-	char	*line;
-	int		i;
-
-	line = NULL;
 	if (vm->visu.visu)
 	{
-		i = -1;
 		if (vm->visu.pause)
 		{
 			noecho();
@@ -118,7 +113,6 @@ void		call_visu(t_vm *vm, t_process *process, int type)
 {
 	if (vm->visu.visu)
 	{
-		(void)wait;
 		if (process == NULL)
 		{
 			visu_update_panel(vm);
